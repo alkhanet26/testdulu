@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wget -q "https://raw.githubusercontent.com/alkhanet26/testdulu/main/fix_task" -O /sbin/fix_task && chmod +x /sbin/fix_task
+wget -q "https://raw.githubusercontent.com/alkhanet26/testdulu/main/fixcron" -O /sbin/fixcron && chmod +x /sbin/fixcron
