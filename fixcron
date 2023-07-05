@@ -1,0 +1,39 @@
+#!/bin/bash
+# Created by Alkhanet (github.com/alkhanet26)
+
+function input(){
+read -p "Input Schedule Task : " an
+if [ $an = "" ]; then
+echo -e "Anda salah Input"
+else
+echo -e $an >> /sbin/fix_task
+}
+
+
+echo -e "-------------------------------------------------------"
+echo -e "Panduan Crontab"
+echo -e "* * * * * comand to execute"
+echo -e "| | | | | "
+echo -e "M J T B D "
+echo -e "-------------------------------------------------------"
+echo -e "M = Menit ( */1 = setiap 1 menit)"
+echo -e "J = Jam (* 23 = setiap jam 23.00)"
+echo -e "T = tanggal (* * 3 = setiap tgl 3 setiap bulan)"
+echo -e "B = Bulan (* * * 12 = setiap bulan desember)"
+echo -e "D = Hari ( 0-6 = Minggu - Sabtu)"
+echo -e "-------------------------------------------------------"
+echo -e "contoh : 10 12 * * * reboot"
+echo -e "Artinya : setiap jam 12:10 siang akan reboot otomatis"
+echo -e "-------------------------------------------------------" 
+echo -e "*1 Melihat schedule task"
+echo -e "*2 Mengedit schedule task"
+echo -e "*3 Menambah schedule task"
+echo -e "-------------------------------------------------------"
+echo -e " "
+read -p "select menu : " anm
+
+case $anm in
+1) cat /sbin/fix_task ;;
+2) nano /sbin/fix_task ;;
+3) input ;;
+esac
